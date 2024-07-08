@@ -1,0 +1,6 @@
+package br.com.lmv.APIContatos.service.interfaces;
+
+
+public interface ContatoServiceInterface {
+
+}

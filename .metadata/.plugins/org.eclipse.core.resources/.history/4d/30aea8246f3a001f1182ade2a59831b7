@@ -1,0 +1,27 @@
+package br.com.lmv.APIContatos;
+
+import org.springframework.boot.SpringApplication;
+
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+import br.com.lmv.APIContatos.model.Pessoa;
+
+@SpringBootApplication
+public class ApiContatosApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(ApiContatosApplication.class, args);
+		
+		Pessoa pessoa = new Pessoa();
+		pessoa.setId(1L);
+		pessoa.setCep("138430-023");
+		pessoa.setNome("Lucas Marques");
+		pessoa.setEndereco("Rua Do Brasil");
+		pessoa.setUf("SP");
+		pessoa.setCidade("São Paulo");
+		
+		System.out.println(pessoa.toString());
+		
+	}
+
+}

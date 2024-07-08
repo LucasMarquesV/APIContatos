@@ -1,0 +1,26 @@
+package br.com.lmv.APIContatos.resouce;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import br.com.lmv.APIContatos.model.Pessoa;
+
+@RestController
+@RequestMapping("/api/pessoas")
+public class PessoaResource {
+
+	@GetMapping("pessoa")
+	public ResponseEntity<Pessoa> getPessoa() {
+		Pessoa pessoa = new Pessoa();
+		pessoa.setId(1L);
+		pessoa.setCep("138430-023");
+		pessoa.setNome("Lucas Marques");
+		pessoa.setEndereco("Rua Do Brasil");
+		pessoa.setUf("SP");
+		pessoa.setCidade("São Paulo");
+		
+		return ResponseEntity.ok(pessoa);
+	}
+}

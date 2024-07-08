@@ -1,0 +1,5 @@
+package br.com.lmv.APIContatos.model;
+
+public class Pessoa {
+
+}

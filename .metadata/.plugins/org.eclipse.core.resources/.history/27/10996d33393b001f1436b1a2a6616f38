@@ -1,0 +1,42 @@
+package br.com.lmv.APIContatos.service;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import br.com.lmv.APIContatos.model.Pessoa;
+import br.com.lmv.APIContatos.repository.PessoaRepository;
+
+@Service
+public class PessoaService {
+
+	@Autowired
+	PessoaRepository pessoaRepository;
+	
+	public Pessoa save(Pessoa pessoa) {
+		if(pessoa.getNome() == null) {
+			System.out.println("Campo de nome da pessoa vazio.");
+			return null;
+		}
+
+		return pessoaRepository.save(pessoa);
+	}
+	
+	public List<Pessoa> findAll(){
+		return pessoaRepository.findAll();
+	}
+	
+	public Optional<Pessoa> findById(Long id) {
+		return pessoaRepository.findById(id);
+	}
+	
+	public Pessoa update(Pessoa pessoa) {
+		return pessoaRepository.save(pessoa);
+	}
+	
+	public void delete(Long id) {
+		pessoaRepository.deleteById(id);
+	}
+}
